@@ -19,7 +19,7 @@ const palestrantes = [
   {
     iniciais: "BG",
     nome: "Bill Gates",
-    cargo: "Engenheiro de Software",
+    cargo: "Cofundador da Microsoft e empresário de tecnologia.",
     tema: "Construindo produtos que fazem a diferença",
     classe: "avatar-lilac",
     foto: "/images/bill-gates.webp",
@@ -27,8 +27,8 @@ const palestrantes = [
   {
     iniciais: "EV",
     nome: "Erika Vitória",
-    cargo: "Especialista em Inteligência Artificial",
-    tema: "IA na prática: do conceito à solução",
+    cargo: "Engenheira de Softwware",
+    tema: "Contruindo produtos que fazem a diferença",
     classe: "avatar-blue",
     foto: "/images/erika-vitoria.jpeg",
   },

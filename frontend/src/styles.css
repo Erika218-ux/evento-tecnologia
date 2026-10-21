@@ -1,10 +1,13 @@
+
 /*
-  Estilos do site TechConnect
-  Este arquivo controla a aparência das páginas do projeto.
+  TECHCONNECT
+  Este arquivo controla a aparência de todas as páginas do site.
 */
 
+/* Importa as fontes usadas no projeto */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
+/* Define as cores e a fonte padrão do site */
 :root {
   font-family: 'DM Sans', sans-serif;
   color: #172033;
@@ -13,6 +16,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
+  /* Cores principais do tema original */
   --ink: #172033;
   --muted: #68738a;
   --navy: #10172a;
@@ -23,54 +27,68 @@
   --soft: #f7f8fc;
 }
 
+/* Mantém o tamanho dos elementos mais fácil de controlar */
 * {
   box-sizing: border-box;
 }
 
+/* Faz os links da página rolarem suavemente */
 html {
   scroll-behavior: smooth;
 }
 
+/* Configura a página e remove a margem padrão */
 body {
   margin: 0;
   min-width: 320px;
 }
 
+/* Remove o sublinhado dos links */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Usa a mesma fonte nos campos e botões */
 button,
 input {
   font: inherit;
 }
 
+/* Mostra a mão ao passar sobre um botão */
 button {
   cursor: pointer;
 }
 
+/* Indica quando um botão está desativado */
 button:disabled {
   opacity: .6;
   cursor: not-allowed;
 }
 
+/* Centraliza o conteúdo e limita sua largura */
 .container {
   width: min(1160px, calc(100% - 48px));
   margin: 0 auto;
 }
 
+/* Organiza a estrutura geral do site */
 .app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Faz o conteúdo principal ocupar o espaço disponível */
 main {
   flex: 1;
 }
 
-/* Cabeçalho e navegação */
+/* ==================================================
+   CABEÇALHO E MENU DE NAVEGAÇÃO
+   ================================================== */
+
+/* Define a aparência do cabeçalho */
 .site-header {
   height: 82px;
   background: #fff;
@@ -79,6 +97,7 @@ main {
   z-index: 10;
 }
 
+/* Alinha os elementos do menu */
 .nav-wrap,
 .nav-links,
 .brand {
@@ -86,11 +105,13 @@ main {
   align-items: center;
 }
 
+/* Distribui o logo e os links do menu */
 .nav-wrap {
   height: 100%;
   justify-content: space-between;
 }
 
+/* Organiza o nome e o símbolo da marca */
 .brand {
   gap: 10px;
   font-family: Manrope, sans-serif;
@@ -100,6 +121,7 @@ main {
   line-height: 1.05;
 }
 
+/* Cria o quadrado do símbolo do logo */
 .brand-mark {
   width: 39px;
   height: 39px;
@@ -110,10 +132,12 @@ main {
   place-items: center;
 }
 
+/* Destaca uma parte do nome do logo */
 .brand-accent {
   color: var(--purple);
 }
 
+/* Estiliza o texto pequeno abaixo da marca */
 .brand small {
   display: block;
   font: 700 8px 'DM Sans', sans-serif;
@@ -122,6 +146,7 @@ main {
   margin-top: 5px;
 }
 
+/* Organiza os links de navegação */
 .nav-links {
   gap: 30px;
   color: #667087;
@@ -129,11 +154,13 @@ main {
   font-weight: 600;
 }
 
+/* Muda a cor dos links ativos e ao passar o mouse */
 .nav-links > a:not(.nav-cta):hover,
 .nav-links > a.active {
   color: var(--purple);
 }
 
+/* Estiliza o botão de inscrição do menu */
 .nav-cta {
   display: flex;
   align-items: center;
@@ -145,10 +172,12 @@ main {
   transition: .2s;
 }
 
+/* Muda a cor do botão ao passar o mouse */
 .nav-cta:hover {
   background: var(--purple);
 }
 
+/* Esconde o menu de celular em telas grandes */
 .mobile-menu {
   display: none;
   border: 0;
@@ -156,7 +185,11 @@ main {
   color: var(--ink);
 }
 
-/* Página inicial */
+/* ==================================================
+   PÁGINA INICIAL E APRESENTAÇÃO DO EVENTO
+   ================================================== */
+
+/* Cria o fundo da apresentação principal */
 .hero {
   position: relative;
   overflow: hidden;
@@ -165,6 +198,7 @@ main {
   padding: 68px 0 0;
 }
 
+/* Cria uma grade decorativa no fundo */
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -176,6 +210,7 @@ main {
   mask-image: linear-gradient(90deg, transparent, black 45%, black);
 }
 
+/* Divide a apresentação em duas colunas */
 .hero-layout {
   display: grid;
   grid-template-columns: 1.02fr .98fr;
@@ -185,11 +220,13 @@ main {
   min-height: 430px;
 }
 
+/* Organiza o texto da apresentação */
 .hero-copy {
   padding-bottom: 54px;
   z-index: 1;
 }
 
+/* Estiliza os pequenos títulos das seções */
 .eyebrow,
 .section-kicker {
   font-size: 10px;
@@ -198,6 +235,7 @@ main {
   color: #a99bff;
 }
 
+/* Cria o selo que aparece acima do título */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -209,6 +247,7 @@ main {
   margin-bottom: 23px;
 }
 
+/* Cria os pequenos indicadores de status */
 .live-dot,
 .status-dot {
   width: 7px;
@@ -218,6 +257,7 @@ main {
   display: inline-block;
 }
 
+/* Define o tamanho dos títulos principais */
 .hero h1,
 .form-intro h1,
 .attendees-heading h1 {
@@ -226,6 +266,7 @@ main {
   margin: 0;
 }
 
+/* Aplica um degradê colorido ao texto */
 .gradient-text {
   background: linear-gradient(95deg, #a89aff 4%, #6adcf0 95%);
   -webkit-background-clip: text;
@@ -233,6 +274,7 @@ main {
   color: transparent;
 }
 
+/* Formata o texto de apresentação */
 .hero-description {
   font-size: 15px;
   line-height: 1.8;
@@ -241,12 +283,14 @@ main {
   margin: 23px 0 26px;
 }
 
+/* Organiza os botões da apresentação */
 .hero-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
+/* Define o formato padrão dos botões */
 .button {
   display: inline-flex;
   justify-content: center;
@@ -261,29 +305,35 @@ main {
   min-height: 46px;
 }
 
+/* Move o botão um pouco para cima ao passar o mouse */
 .button:hover {
   transform: translateY(-2px);
 }
 
+/* Estiliza o botão principal */
 .button-primary {
   background: var(--purple);
   color: #fff;
 }
 
+/* Muda a cor do botão principal ao passar o mouse */
 .button-primary:hover {
   background: var(--purple-dark);
 }
 
+/* Estiliza o botão secundário */
 .button-ghost {
   color: #e3e6f2;
   border: 1px solid #3c435d;
   background: transparent;
 }
 
+/* Destaca o botão secundário ao passar o mouse */
 .button-ghost:hover {
   background: #202740;
 }
 
+/* Alinha as informações sobre os participantes */
 .hero-proof {
   display: flex;
   align-items: center;
@@ -291,11 +341,13 @@ main {
   margin-top: 35px;
 }
 
+/* Coloca os avatares um ao lado do outro */
 .proof-avatars {
   display: flex;
   padding-left: 3px;
 }
 
+/* Cria os círculos dos avatares */
 .proof-avatars span {
   width: 31px;
   height: 31px;
@@ -310,6 +362,7 @@ main {
   font-weight: 800;
 }
 
+/* Muda a cor de cada avatar */
 .proof-avatars span:nth-child(2) {
   background: #a6e4f0;
   color: #164d60;
@@ -325,6 +378,7 @@ main {
   color: #fff;
 }
 
+/* Organiza os textos ao lado dos avatares */
 .hero-proof strong,
 .hero-proof small {
   display: block;
@@ -340,7 +394,11 @@ main {
   margin-top: 4px;
 }
 
-/* Ilustração tecnológica */
+/* ==================================================
+   ILUSTRAÇÃO TECNOLÓGICA DA PÁGINA INICIAL
+   ================================================== */
+
+/* Posiciona a ilustração ao lado do texto */
 .hero-art {
   height: 405px;
   position: relative;
@@ -348,6 +406,7 @@ main {
   place-items: center;
 }
 
+/* Cria o brilho atrás da ilustração */
 .art-glow {
   position: absolute;
   width: 240px;
@@ -358,6 +417,7 @@ main {
   border-radius: 50%;
 }
 
+/* Desenha as órbitas decorativas */
 .art-orbit {
   position: absolute;
   border: 1px solid #55508b;
@@ -365,11 +425,13 @@ main {
   transform: rotate(-25deg);
 }
 
+/* Define o tamanho da primeira órbita */
 .orbit-one {
   width: 400px;
   height: 250px;
 }
 
+/* Define o tamanho e a inclinação da segunda órbita */
 .orbit-two {
   width: 310px;
   height: 350px;
@@ -377,6 +439,7 @@ main {
   border-color: #3a7891;
 }
 
+/* Cria o quadrado central da ilustração */
 .art-core {
   width: 180px;
   height: 180px;
@@ -391,10 +454,12 @@ main {
   z-index: 1;
 }
 
+/* Adiciona brilho ao ícone central */
 .art-core svg {
   filter: drop-shadow(0 0 15px #8b7bff);
 }
 
+/* Formata os pequenos cartões flutuantes */
 .floating-card {
   position: absolute;
   z-index: 2;
@@ -409,6 +474,7 @@ main {
   backdrop-filter: blur(12px);
 }
 
+/* Organiza os textos dos cartões flutuantes */
 .floating-card strong,
 .floating-card small {
   display: block;
@@ -424,6 +490,7 @@ main {
   margin-top: 4px;
 }
 
+/* Posiciona cada cartão na ilustração */
 .card-ai {
   top: 54px;
   right: 0;
@@ -439,6 +506,7 @@ main {
   right: 15px;
 }
 
+/* Cria os quadrados coloridos dos ícones */
 .float-icon {
   width: 34px;
   height: 34px;
@@ -447,6 +515,7 @@ main {
   place-items: center;
 }
 
+/* Cores dos ícones decorativos */
 .purple {
   background: #38305f;
   color: #c4b9ff;
@@ -462,6 +531,7 @@ main {
   color: #ffb995;
 }
 
+/* Posiciona as estrelas decorativas */
 .art-spark {
   position: absolute;
   color: #8c81ff;
@@ -480,7 +550,11 @@ main {
   color: #65d8e9;
 }
 
-/* Informações do evento */
+/* ==================================================
+   INFORMAÇÕES DO EVENTO
+   ================================================== */
+
+/* Organiza data, local e demais informações */
 .event-strip {
   position: relative;
   display: grid;
@@ -490,12 +564,14 @@ main {
   gap: 20px;
 }
 
+/* Alinha o ícone e o texto de cada informação */
 .event-strip > div {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Cria o fundo dos ícones das informações */
 .strip-icon {
   display: grid;
   place-items: center;
@@ -506,6 +582,7 @@ main {
   color: #b3a6ff;
 }
 
+/* Organiza os textos das informações */
 .event-strip small,
 .event-strip strong {
   display: block;
@@ -523,20 +600,24 @@ main {
   color: #eef0f8;
 }
 
+/* Define o espaçamento das seções */
 .section {
   padding: 92px 0;
 }
 
+/* Cria o fundo claro de algumas seções */
 .section-light {
   background: #f8f9fc;
 }
 
+/* Divide a seção de apresentação em duas colunas */
 .about-layout {
   display: grid;
   grid-template-columns: .8fr 1.2fr;
   gap: 80px;
 }
 
+/* Formata os títulos das seções */
 .section-heading h2,
 .section-topline h2,
 .cta-panel h2 {
@@ -545,10 +626,12 @@ main {
   margin: 16px 0 0;
 }
 
+/* Aplica uma cor mais suave aos textos */
 .text-muted {
   color: #8a93a7;
 }
 
+/* Formata o texto explicativo da seção */
 .about-copy > p {
   font-size: 14px;
   color: #667087;
@@ -556,12 +639,14 @@ main {
   margin: 0 0 28px;
 }
 
+/* Organiza os cartões de benefícios */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
+/* Define o visual de cada cartão de benefício */
 .feature-card {
   background: #fff;
   border: 1px solid #e9ebf2;
@@ -569,6 +654,7 @@ main {
   padding: 18px 15px;
 }
 
+/* Cria o espaço dos ícones dos benefícios */
 .feature-icon {
   width: 39px;
   height: 39px;
@@ -577,6 +663,7 @@ main {
   place-items: center;
 }
 
+/* Cores dos ícones dos benefícios */
 .feature-icon.violet {
   background: #eeeaff;
   color: #7857f5;
@@ -592,6 +679,7 @@ main {
   color: #d97837;
 }
 
+/* Formata os títulos e textos dos benefícios */
 .feature-card h3 {
   font-size: 12px;
   margin: 15px 0 7px;
@@ -604,11 +692,16 @@ main {
   margin: 0;
 }
 
-/* Cards dos palestrantes */
+/* ==================================================
+   CARTÕES DOS PALESTRANTES
+   ================================================== */
+
+/* Define o fundo da seção dos palestrantes */
 .speakers-section {
   background: #fff;
 }
 
+/* Alinha o título e a observação da seção */
 .section-topline {
   display: flex;
   align-items: end;
@@ -620,6 +713,7 @@ main {
   margin-top: 12px;
 }
 
+/* Organiza a observação ao lado do título */
 .speaker-note {
   display: flex;
   gap: 8px;
@@ -628,12 +722,14 @@ main {
   font-size: 11px;
 }
 
+/* Distribui os cartões em três colunas */
 .speaker-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
+/* Define o visual dos cartões dos palestrantes */
 .speaker-card {
   min-width: 0;
   border: 1px solid #e7eaf1;
@@ -642,12 +738,13 @@ main {
   transition: transform .2s, box-shadow .2s;
 }
 
+/* Eleva o cartão ao passar o mouse */
 .speaker-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 40px #26335b0d;
 }
 
-/* Fotos dos palestrantes */
+/* Cria o espaço redondo das fotos */
 .speaker-avatar {
   width: 110px;
   height: 110px;
@@ -663,6 +760,7 @@ main {
   box-shadow: 0 4px 15px rgba(23, 32, 51, .15);
 }
 
+/* Faz a foto preencher o espaço sem esticar */
 .speaker-avatar img {
   display: block;
   width: 100%;
@@ -673,14 +771,17 @@ main {
   transition: transform .3s ease;
 }
 
+/* Aumenta um pouco a foto ao passar o mouse */
 .speaker-card:hover .speaker-avatar img {
   transform: scale(1.06);
 }
 
+/* Esconde uma imagem que não foi encontrada */
 .speaker-avatar.image-not-found img {
   display: none;
 }
 
+/* Cores dos espaços de foto */
 .avatar-lilac {
   background: #e9e2ff;
   color: #6c4ce3;
@@ -696,6 +797,7 @@ main {
   color: #bc6530;
 }
 
+/* Formata a categoria do palestrante */
 .speaker-label {
   font-size: 9px;
   letter-spacing: 1.4px;
@@ -703,24 +805,28 @@ main {
   font-weight: 800;
 }
 
+/* Formata o nome do palestrante */
 .speaker-card h3 {
   font: 800 19px Manrope, sans-serif;
   letter-spacing: -.5px;
   margin: 8px 0 4px;
 }
 
+/* Formata a profissão do palestrante */
 .speaker-role {
   font-size: 12px;
   color: #7b8598;
   margin: 0;
 }
 
+/* Cria a linha entre as informações */
 .speaker-divider {
   height: 1px;
   background: #eceef4;
   margin: 20px 0;
 }
 
+/* Formata o tema da palestra */
 .speaker-topic {
   font-size: 13px;
   color: #3e4960;
@@ -728,11 +834,17 @@ main {
   margin: 0;
 }
 
+/* ==================================================
+   CHAMADA PARA INSCRIÇÃO
+   ================================================== */
+
+/* Define o espaço da seção de inscrição */
 .cta-section {
   padding: 0 0 86px;
   background: #fff;
 }
 
+/* Organiza o conteúdo do painel de inscrição */
 .cta-panel {
   position: relative;
   overflow: hidden;
@@ -746,6 +858,7 @@ main {
   gap: 25px;
 }
 
+/* Adiciona círculos decorativos ao painel */
 .cta-panel::after {
   content: "";
   position: absolute;
@@ -758,6 +871,7 @@ main {
   box-shadow: 0 0 0 35px #7b65ff0b, 0 0 0 70px #7b65ff08;
 }
 
+/* Formata o título e o texto da chamada */
 .cta-panel h2 {
   font-size: 30px;
   margin: 10px 0;
@@ -773,6 +887,7 @@ main {
   font-size: 9px;
 }
 
+/* Cria o quadrado decorativo da chamada */
 .cta-decoration {
   width: 65px;
   height: 65px;
@@ -785,6 +900,7 @@ main {
   color: #afa1ff;
 }
 
+/* Estiliza o botão claro da chamada */
 .button-light {
   background: #fff;
   color: #252343;
@@ -796,13 +912,18 @@ main {
   background: #eeeaff;
 }
 
-/* Rodapé */
+/* ==================================================
+   RODAPÉ DO SITE
+   ================================================== */
+
+/* Define o fundo e o espaçamento do rodapé */
 .site-footer {
   border-top: 1px solid #edf0f5;
   background: #fff;
   padding: 25px 0;
 }
 
+/* Distribui os elementos do rodapé */
 .footer-inner {
   display: flex;
   align-items: center;
@@ -810,6 +931,7 @@ main {
   gap: 20px;
 }
 
+/* Ajusta o tamanho da marca no rodapé */
 .footer-brand {
   font-size: 17px;
 }
@@ -820,18 +942,24 @@ main {
   border-radius: 10px;
 }
 
+/* Formata o texto e o ano do rodapé */
 .footer-inner > p,
 .footer-year {
   font-size: 10px;
   color: #8992a5;
 }
 
+/* Centraliza a mensagem de página não encontrada */
 .not-found {
   padding: 100px 0;
   text-align: center;
 }
 
-/* Formulário de inscrição */
+/* ==================================================
+   FORMULÁRIO DE INSCRIÇÃO
+   ================================================== */
+
+/* Define o fundo e o espaçamento das páginas internas */
 .form-page,
 .attendees-page {
   background: #f8f9fc;
@@ -839,6 +967,7 @@ main {
   padding: 58px 0 80px;
 }
 
+/* Divide a página do formulário em duas colunas */
 .form-layout {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
@@ -846,10 +975,12 @@ main {
   align-items: start;
 }
 
+/* Organiza o texto de introdução do formulário */
 .form-intro {
   padding-top: 10px;
 }
 
+/* Formata o link para voltar à página anterior */
 .back-link {
   display: flex;
   align-items: center;
@@ -865,12 +996,14 @@ main {
   color: var(--purple);
 }
 
+/* Ajusta o título do formulário */
 .form-intro h1 {
   font-size: 43px;
   letter-spacing: -1.8px;
   margin: 15px 0;
 }
 
+/* Formata o texto introdutório */
 .form-intro > p,
 .attendees-heading p {
   font-size: 14px;
@@ -879,6 +1012,7 @@ main {
   max-width: 430px;
 }
 
+/* Organiza os benefícios da inscrição */
 .form-benefits {
   display: grid;
   gap: 20px;
@@ -891,6 +1025,7 @@ main {
   align-items: center;
 }
 
+/* Cria o espaço dos ícones dos benefícios */
 .form-benefits > div > span {
   width: 34px;
   height: 34px;
@@ -901,10 +1036,12 @@ main {
   border-radius: 10px;
 }
 
+/* Remove as margens padrão dos textos */
 .form-benefits p {
   margin: 0;
 }
 
+/* Organiza os títulos e descrições dos benefícios */
 .form-benefits strong,
 .form-benefits small {
   display: block;
@@ -920,6 +1057,7 @@ main {
   margin-top: 4px;
 }
 
+/* Organiza a data do evento */
 .form-date {
   display: flex;
   align-items: center;
@@ -929,6 +1067,7 @@ main {
   border-top: 1px solid #e4e7ef;
 }
 
+/* Cria o quadrado do ícone da data */
 .form-date > span {
   width: 43px;
   height: 43px;
@@ -939,6 +1078,7 @@ main {
   place-items: center;
 }
 
+/* Organiza os textos da data */
 .form-date small,
 .form-date strong {
   display: block;
@@ -955,6 +1095,7 @@ main {
   font-size: 12px;
 }
 
+/* Cria o cartão branco do formulário */
 .form-card {
   background: #fff;
   border: 1px solid #e6e9f1;
@@ -963,6 +1104,7 @@ main {
   box-shadow: 0 10px 40px #29345a08;
 }
 
+/* Alinha o ícone e o título do formulário */
 .form-card-heading {
   display: flex;
   gap: 13px;
@@ -970,6 +1112,7 @@ main {
   margin-bottom: 25px;
 }
 
+/* Cria o quadrado do ícone do formulário */
 .form-card-icon {
   width: 46px;
   height: 46px;
@@ -980,18 +1123,21 @@ main {
   color: #7657ec;
 }
 
+/* Formata o título do cartão */
 .form-card-heading h2 {
   font: 800 20px Manrope, sans-serif;
   letter-spacing: -.5px;
   margin: 0 0 5px;
 }
 
+/* Formata o subtítulo do cartão */
 .form-card-heading p {
   font-size: 11px;
   color: #8992a5;
   margin: 0;
 }
 
+/* Formata os nomes dos campos */
 .form-card form > label,
 .ticket-fieldset legend {
   display: block;
@@ -1000,17 +1146,20 @@ main {
   margin: 18px 0 8px;
 }
 
+/* Destaca os campos obrigatórios */
 .form-card label > span,
 .ticket-fieldset legend span {
   color: #7857f5;
 }
 
+/* Formata os avisos pequenos dos campos */
 .form-card label small {
   font-size: 10px;
   color: #929aab;
   font-weight: 500;
 }
 
+/* Organiza o ícone e o campo de entrada */
 .input-wrap {
   height: 47px;
   display: flex;
@@ -1023,11 +1172,13 @@ main {
   transition: border .2s;
 }
 
+/* Destaca o campo quando ele está selecionado */
 .input-wrap:focus-within {
   border-color: #927bfa;
   box-shadow: 0 0 0 3px #7857f510;
 }
 
+/* Faz o campo de entrada ocupar o espaço disponível */
 .input-wrap input {
   border: 0;
   outline: none;
@@ -1037,10 +1188,12 @@ main {
   font-size: 12px;
 }
 
+/* Define a cor do texto de exemplo */
 .input-wrap input::placeholder {
   color: #adb4c2;
 }
 
+/* Organiza as opções de ingresso */
 .ticket-fieldset {
   border: 0;
   padding: 0;
@@ -1053,6 +1206,7 @@ main {
   gap: 10px;
 }
 
+/* Formata cada opção de ingresso */
 .ticket-option {
   position: relative;
   display: flex !important;
@@ -1065,16 +1219,19 @@ main {
   margin: 0 !important;
 }
 
+/* Destaca a opção de ingresso selecionada */
 .ticket-option.selected {
   border-color: #9079f7;
   background: #f9f7ff;
 }
 
+/* Esconde o botão de seleção original */
 .ticket-option input {
   position: absolute;
   opacity: 0;
 }
 
+/* Desenha o círculo de seleção */
 .ticket-radio {
   width: 15px;
   height: 15px;
@@ -1083,10 +1240,12 @@ main {
   flex-shrink: 0;
 }
 
+/* Preenche o círculo quando a opção é selecionada */
 .ticket-option.selected .ticket-radio {
   border: 5px solid #7857f5;
 }
 
+/* Organiza o nome e a descrição dos ingressos */
 .ticket-option strong,
 .ticket-option small {
   display: block;
@@ -1102,11 +1261,13 @@ main {
   margin-top: 4px;
 }
 
+/* Faz o botão de envio ocupar toda a largura */
 .submit-button {
   width: 100%;
   margin-top: 23px;
 }
 
+/* Centraliza o aviso de privacidade */
 .privacy-note {
   display: flex;
   align-items: center;
@@ -1117,6 +1278,7 @@ main {
   margin: 15px 0 0;
 }
 
+/* Formata as mensagens de aviso */
 .alert {
   display: flex;
   align-items: flex-start;
@@ -1128,12 +1290,14 @@ main {
   margin: 0 0 16px;
 }
 
+/* Aparência da mensagem de erro */
 .alert-error {
   background: #fff0f0;
   color: #a8343e;
   border: 1px solid #ffd9dc;
 }
 
+/* Aparência da mensagem de sucesso */
 .alert-success {
   background: #edfbf5;
   color: #1d7957;
@@ -1146,6 +1310,7 @@ main {
   font-size: 11px;
 }
 
+/* Formata o botão de texto */
 .text-button {
   display: inline-flex;
   align-items: center;
@@ -1158,7 +1323,11 @@ main {
   font-weight: 700;
 }
 
-/* Lista de inscritos */
+/* ==================================================
+   LISTA DE INSCRITOS
+   ================================================== */
+
+/* Organiza o título e a descrição da lista */
 .attendees-heading {
   display: flex;
   justify-content: space-between;
@@ -1179,6 +1348,7 @@ main {
   margin-bottom: 0;
 }
 
+/* Distribui os cartões com os números da lista */
 .attendee-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1186,6 +1356,7 @@ main {
   margin-bottom: 23px;
 }
 
+/* Formata cada cartão de estatística */
 .stat-card {
   display: flex;
   align-items: center;
@@ -1196,6 +1367,7 @@ main {
   padding: 19px;
 }
 
+/* Cria o fundo dos ícones das estatísticas */
 .stat-icon {
   width: 44px;
   height: 44px;
@@ -1216,6 +1388,7 @@ main {
   color: #d77b3c;
 }
 
+/* Organiza os números e títulos das estatísticas */
 .stat-card small,
 .stat-card strong {
   display: block;
@@ -1233,6 +1406,7 @@ main {
   margin-top: 5px;
 }
 
+/* Cria o painel da tabela de inscritos */
 .attendees-panel {
   background: #fff;
   border: 1px solid #e5e8f0;
@@ -1240,6 +1414,7 @@ main {
   overflow: hidden;
 }
 
+/* Organiza o título e as ferramentas da tabela */
 .panel-toolbar {
   display: flex;
   justify-content: space-between;
@@ -1260,12 +1435,14 @@ main {
   margin: 0;
 }
 
+/* Alinha a busca e os botões da tabela */
 .toolbar-actions {
   display: flex;
   gap: 9px;
   align-items: center;
 }
 
+/* Formata o campo de pesquisa */
 .search-box {
   height: 39px;
   display: flex;
@@ -1284,6 +1461,7 @@ main {
   font-size: 11px;
 }
 
+/* Formata os botões pequenos com ícones */
 .icon-button {
   width: 39px;
   height: 39px;
@@ -1300,10 +1478,12 @@ main {
   border-color: #b9aaf9;
 }
 
+/* Permite rolar a tabela na horizontal */
 .table-scroll {
   overflow-x: auto;
 }
 
+/* Define a estrutura da tabela */
 .attendees-table {
   border-collapse: collapse;
   width: 100%;
@@ -1311,6 +1491,7 @@ main {
   text-align: left;
 }
 
+/* Formata o cabeçalho da tabela */
 .attendees-table th {
   background: #fafbfe;
   color: #8b94a7;
@@ -1320,18 +1501,21 @@ main {
   font-weight: 800;
 }
 
+/* Formata as células da tabela */
 .attendees-table td {
   padding: 16px 22px;
   border-top: 1px solid #edf0f5;
   font-size: 11px;
 }
 
+/* Alinha o avatar e o nome da pessoa */
 .person-cell {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Cria o avatar de cada inscrito */
 .person-avatar {
   width: 35px;
   height: 35px;
@@ -1345,6 +1529,7 @@ main {
   flex-shrink: 0;
 }
 
+/* Organiza o nome e o texto menor da pessoa */
 .person-cell strong,
 .person-cell small {
   display: block;
@@ -1360,6 +1545,7 @@ main {
   margin-top: 4px;
 }
 
+/* Organiza os dados de contato */
 .contact-cell {
   display: grid;
   gap: 6px;
@@ -1373,6 +1559,7 @@ main {
   white-space: nowrap;
 }
 
+/* Cria os selos dos tipos de ingresso */
 .ticket-badge {
   display: inline-flex;
   padding: 6px 9px;
@@ -1392,10 +1579,12 @@ main {
   color: #26869f;
 }
 
+/* Alinha os botões da última coluna */
 .action-column {
   text-align: right;
 }
 
+/* Formata o botão para excluir um inscrito */
 .delete-button {
   display: inline-flex;
   align-items: center;
@@ -1413,6 +1602,7 @@ main {
   background: #fff1f2;
 }
 
+/* Organiza as informações abaixo da tabela */
 .panel-footer {
   display: flex;
   justify-content: space-between;
@@ -1434,6 +1624,7 @@ main {
   height: 6px;
 }
 
+/* Centraliza a mensagem quando não há inscritos */
 .empty-state {
   min-height: 250px;
   display: flex;
@@ -1444,6 +1635,7 @@ main {
   padding: 32px;
 }
 
+/* Cria o fundo do ícone da mensagem vazia */
 .empty-icon {
   width: 55px;
   height: 55px;
@@ -1454,6 +1646,7 @@ main {
   color: #7857f5;
 }
 
+/* Formata a mensagem de lista vazia */
 .empty-state h3 {
   font: 800 17px Manrope, sans-serif;
   margin: 15px 0 5px;
@@ -1467,6 +1660,7 @@ main {
   line-height: 1.6;
 }
 
+/* Cria a animação de carregamento */
 .loader {
   width: 25px;
   height: 25px;
@@ -1480,12 +1674,14 @@ main {
   margin-top: 12px;
 }
 
+/* Faz o círculo de carregamento girar */
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
+/* Alinha o aviso administrativo */
 .admin-note {
   text-align: right;
   color: #929bad;
@@ -1493,8 +1689,12 @@ main {
   margin-top: 13px;
 }
 
-/* Ajustes para tablets e notebooks menores */
+/* ==================================================
+   AJUSTES PARA TABLETS E NOTEBOOKS MENORES
+   ================================================== */
+
 @media (max-width: 900px) {
+  /* Ajusta as colunas da apresentação */
   .hero-layout {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -1504,6 +1704,7 @@ main {
     font-size: 43px;
   }
 
+  /* Reduz um pouco a ilustração */
   .hero-art {
     transform: scale(.9);
     margin: 0 -20px;
@@ -1513,6 +1714,7 @@ main {
     gap: 40px;
   }
 
+  /* Coloca os benefícios em uma coluna */
   .feature-grid {
     grid-template-columns: 1fr;
   }
@@ -1558,8 +1760,12 @@ main {
   }
 }
 
-/* Ajustes para celulares */
+/* ==================================================
+   AJUSTES PARA CELULARES
+   ================================================== */
+
 @media (max-width: 700px) {
+  /* Aproveita melhor a largura da tela */
   .container {
     width: min(calc(100% - 34px), 540px);
   }
@@ -1577,10 +1783,12 @@ main {
     height: 36px;
   }
 
+  /* Mostra o botão do menu para celular */
   .mobile-menu {
     display: block;
   }
 
+  /* Configura o menu que abre no celular */
   .nav-links {
     display: none;
     position: absolute;
@@ -1595,6 +1803,7 @@ main {
     box-shadow: 0 15px 25px #1720330c;
   }
 
+  /* Mostra o menu quando ele recebe a classe nav-open */
   .nav-links.nav-open {
     display: flex;
     flex-direction: column;
@@ -1613,6 +1822,7 @@ main {
     padding-top: 46px;
   }
 
+  /* Coloca o texto e a ilustração um abaixo do outro */
   .hero-layout {
     display: flex;
     flex-direction: column;
@@ -1647,6 +1857,7 @@ main {
     margin-top: 24px;
   }
 
+  /* Ajusta a ilustração para caber na tela */
   .hero-art {
     height: 310px;
     transform: none;
@@ -1716,6 +1927,7 @@ main {
     top: 100px;
   }
 
+  /* Coloca as informações do evento em uma coluna */
   .event-strip {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -1734,6 +1946,7 @@ main {
     padding: 62px 0;
   }
 
+  /* Deixa a seção de apresentação em uma coluna */
   .about-layout {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -1765,12 +1978,14 @@ main {
     font-size: 10px;
   }
 
+  /* Coloca o título e a observação em linhas separadas */
   .section-topline {
     align-items: flex-start;
     gap: 10px;
     flex-direction: column;
   }
 
+  /* Exibe um palestrante por linha */
   .speaker-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1788,6 +2003,7 @@ main {
     padding-bottom: 50px;
   }
 
+  /* Organiza o painel de inscrição no celular */
   .cta-panel {
     padding: 28px 23px;
     display: grid;
@@ -1820,6 +2036,7 @@ main {
     margin-top: 5px;
   }
 
+  /* Permite que o rodapé se ajuste à tela */
   .footer-inner {
     flex-wrap: wrap;
   }
@@ -1839,6 +2056,7 @@ main {
     padding: 30px 0 55px;
   }
 
+  /* Coloca o formulário abaixo da introdução */
   .form-layout {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1857,6 +2075,7 @@ main {
     font-size: 13px;
   }
 
+  /* Organiza os benefícios em duas colunas */
   .form-benefits {
     grid-template-columns: 1fr 1fr;
     gap: 13px;
@@ -1914,6 +2133,7 @@ main {
     line-height: 1.5;
   }
 
+  /* Empilha as informações da lista de inscritos */
   .attendees-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -1958,6 +2178,7 @@ main {
     font-size: 22px;
   }
 
+  /* Coloca as ferramentas da tabela uma abaixo da outra */
   .panel-toolbar {
     align-items: stretch;
     flex-direction: column;
@@ -1999,7 +2220,7 @@ main {
   }
 }
 
-/* Respeita quem prefere animações reduzidas */
+/* Reduz as animações para quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -2010,12 +2231,12 @@ main {
   }
 }
 
-
 /* ======================================================
    NOVO VISUAL TECHCONNECT: AZUL FLUORESCENTE + ROSA NEON
-   Estas regras ficam no final para atualizar todas as páginas.
+   Estas regras atualizam as cores do site inteiro.
    ====================================================== */
 
+/* Define as novas cores principais */
 :root {
   --ink: #f4f5ff;
   --muted: #b4bdd3;
@@ -2030,106 +2251,227 @@ main {
   color: #f4f5ff;
 }
 
+/* Aplica o fundo escuro ao site */
 body {
   background: #080b18;
   color: #f4f5ff;
 }
 
+/* Mantém o conteúdo centralizado */
 .container {
   width: min(1160px, calc(100% - 48px));
 }
 
-/* Cabeçalho compartilhado por todas as páginas. */
+/* ======================================================
+   CABEÇALHO COM CORES NEON
+   ====================================================== */
+
+/* Escurece o cabeçalho */
 .site-header {
   background: #090d1c;
   border-bottom: 1px solid #222b45;
 }
-.brand { color: #f8f8ff; }
+
+.brand {
+  color: #f8f8ff;
+}
+
+/* Aplica o degradê azul e rosa ao logo */
 .brand-mark {
   background: linear-gradient(135deg, #20dfff, #ff4fcf);
   color: #080b18;
   box-shadow: 0 0 20px #27e6ff30;
 }
-.brand-accent { color: #ff62d5; }
-.brand small, .nav-links { color: #aab4cd; }
+
+.brand-accent {
+  color: #ff62d5;
+}
+
+/* Ajusta as cores dos textos do menu */
+.brand small,
+.nav-links {
+  color: #aab4cd;
+}
+
+/* Destaca os links ativos */
 .nav-links > a:not(.nav-cta):hover,
-.nav-links > a.active { color: #27e6ff; }
+.nav-links > a.active {
+  color: #27e6ff;
+}
+
+/* Aplica o degradê ao botão de inscrição */
 .nav-cta {
   color: #080b18;
   background: linear-gradient(100deg, #27e6ff, #ff4fcf);
   font-weight: 800;
 }
-.nav-cta:hover { color: #fff; background: #ff4fcf; }
-.mobile-menu { color: #fff; }
 
-/* Primeira página: apresentação do evento. */
+.nav-cta:hover {
+  color: #fff;
+  background: #ff4fcf;
+}
+
+.mobile-menu {
+  color: #fff;
+}
+
+/* ======================================================
+   APRESENTAÇÃO COM AZUL E ROSA NEON
+   ====================================================== */
+
+/* Cria um fundo escuro com brilho azul */
 .hero {
   background: radial-gradient(circle at 80% 30%, #19264b 0, transparent 35%), #080b18;
 }
+
+/* Deixa a grade de fundo mais visível */
 .hero-grid {
   opacity: .2;
-  background-image: linear-gradient(#27e6ff1c 1px, transparent 1px),
+  background-image:
+    linear-gradient(#27e6ff1c 1px, transparent 1px),
     linear-gradient(90deg, #ff4fcf1c 1px, transparent 1px);
 }
+
+/* Destaca o selo da apresentação */
 .eyebrow {
   color: #27e6ff;
   border-color: #25455c;
   background: #0d1c31;
 }
-.live-dot, .status-dot { background: #ff4fcf; }
-.hero h1, .form-intro h1, .attendees-heading h1 {
+
+/* Muda a cor dos indicadores */
+.live-dot,
+.status-dot {
+  background: #ff4fcf;
+}
+
+/* Ajusta os títulos principais para o tema neon */
+.hero h1,
+.form-intro h1,
+.attendees-heading h1 {
   color: #fff;
   font-family: 'Manrope', sans-serif;
   font-size: clamp(42px, 5vw, 68px);
   line-height: 1.12;
   letter-spacing: -2px;
 }
+
+/* Aplica o degradê azul e rosa aos títulos */
 .gradient-text {
   background: linear-gradient(100deg, #27e6ff, #ff4fcf);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.hero-description { color: #c0c9df; }
+
+.hero-description {
+  color: #c0c9df;
+}
+
+/* Destaca o botão principal com o degradê neon */
 .button-primary {
   color: #080b18;
   background: linear-gradient(100deg, #27e6ff, #ff4fcf);
 }
-.button-primary:hover { color: #fff; background: #ff4fcf; }
-.button-ghost { color: #f4f5ff; border-color: #35405e; }
-.button-ghost:hover { background: #17213a; }
-.hero-proof small, .floating-card small { color: #b7c1d8; }
+
+.button-primary:hover {
+  color: #fff;
+  background: #ff4fcf;
+}
+
+.button-ghost {
+  color: #f4f5ff;
+  border-color: #35405e;
+}
+
+.button-ghost:hover {
+  background: #17213a;
+}
+
+.hero-proof small,
+.floating-card small {
+  color: #b7c1d8;
+}
+
+/* Muda o brilho da ilustração */
 .art-glow {
   background: #ff4fcf;
   opacity: .34;
 }
-.art-orbit { border-color: #27e6ff80; }
-.orbit-two { border-color: #ff4fcf80; }
+
+.art-orbit {
+  border-color: #27e6ff80;
+}
+
+.orbit-two {
+  border-color: #ff4fcf80;
+}
+
+/* Atualiza o quadrado central da ilustração */
 .art-core {
   color: #27e6ff;
   background: linear-gradient(145deg, #132442, #301537);
   border-color: #ff4fcf;
   box-shadow: 0 0 55px #27e6ff25, 0 0 75px #ff4fcf25;
 }
-.art-core svg { filter: drop-shadow(0 0 14px #27e6ff); }
+
+.art-core svg {
+  filter: drop-shadow(0 0 14px #27e6ff);
+}
+
+/* Escurece os cartões flutuantes */
 .floating-card {
   background: #11182bF2;
   border-color: #38415f;
 }
-.purple { background: #3b1c45; color: #ff77da; }
-.cyan { background: #103b4c; color: #27e6ff; }
-.orange { background: #3b2040; color: #ff77da; }
-.art-spark { color: #ff4fcf; }
-.spark-b { color: #27e6ff; }
-.event-strip { border-color: #26314d; }
+
+/* Atualiza as cores dos ícones */
+.purple {
+  background: #3b1c45;
+  color: #ff77da;
+}
+
+.cyan {
+  background: #103b4c;
+  color: #27e6ff;
+}
+
+.orange {
+  background: #3b2040;
+  color: #ff77da;
+}
+
+.art-spark {
+  color: #ff4fcf;
+}
+
+.spark-b {
+  color: #27e6ff;
+}
+
+/* Atualiza as informações do evento */
+.event-strip {
+  border-color: #26314d;
+}
+
 .strip-icon {
   background: #10253b;
   color: #27e6ff;
 }
-.event-strip small { color: #a8b4d0; }
-.event-strip strong { color: #f4f5ff; }
 
-/* Segunda página: a seção clara agora usa fundo escuro. */
+.event-strip small {
+  color: #a8b4d0;
+}
+
+.event-strip strong {
+  color: #f4f5ff;
+}
+
+/* ======================================================
+   SEÇÕES COM FUNDO ESCURO
+   ====================================================== */
+
+/* Troca os fundos claros por fundos escuros */
 .section-light,
 .speakers-section,
 .cta-section,
@@ -2138,34 +2480,89 @@ body {
   color: #f4f5ff;
   background: #0b1020;
 }
-.section { position: relative; }
-.section-kicker { color: #27e6ff; }
+
+.section {
+  position: relative;
+}
+
+.section-kicker {
+  color: #27e6ff;
+}
+
+/* Deixa os títulos das seções brancos */
 .section-heading h2,
 .section-topline h2,
-.cta-panel h2 { color: #fff; }
-.text-muted { color: #ff68d5; }
-.about-copy > p { color: #bdc6dc; }
+.cta-panel h2 {
+  color: #fff;
+}
+
+.text-muted {
+  color: #ff68d5;
+}
+
+.about-copy > p {
+  color: #bdc6dc;
+}
+
+/* Atualiza os cartões de benefícios */
 .feature-card {
   background: #11182b;
   border-color: #293652;
   color: #f4f5ff;
   transition: transform .2s, border-color .2s, box-shadow .2s;
 }
+
+/* Destaca o cartão quando o mouse passa sobre ele */
 .feature-card:hover {
   transform: translateY(-4px);
   border-color: #27e6ff;
   box-shadow: 0 12px 30px #27e6ff12;
 }
-.feature-card h3 { color: #fff; font-size: 16px; }
-.feature-card p { color: #b8c2d9; font-size: 13px; }
-.feature-icon.violet { background: #351b43; color: #ff64d4; }
-.feature-icon.blue { background: #10384a; color: #27e6ff; }
-.feature-icon.orange { background: #351b43; color: #ff64d4; }
 
-/* Palestrantes: fotos maiores, centralizadas e sem deformar. */
-.section-topline { align-items: center; }
-.speaker-note { color: #b7c1d8; }
-.speaker-grid { gap: 24px; }
+.feature-card h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.feature-card p {
+  color: #b8c2d9;
+  font-size: 13px;
+}
+
+/* Atualiza as cores dos ícones dos benefícios */
+.feature-icon.violet {
+  background: #351b43;
+  color: #ff64d4;
+}
+
+.feature-icon.blue {
+  background: #10384a;
+  color: #27e6ff;
+}
+
+.feature-icon.orange {
+  background: #351b43;
+  color: #ff64d4;
+}
+
+/* ======================================================
+   PALESTRANTES NO TEMA NEON
+   ====================================================== */
+
+/* Alinha o título da seção */
+.section-topline {
+  align-items: center;
+}
+
+.speaker-note {
+  color: #b7c1d8;
+}
+
+.speaker-grid {
+  gap: 24px;
+}
+
+/* Centraliza as informações dentro de cada cartão */
 .speaker-card {
   display: flex;
   flex-direction: column;
@@ -2177,10 +2574,14 @@ body {
   padding: 30px 24px;
   color: #f4f5ff;
 }
+
+/* Adiciona brilho ao cartão ao passar o mouse */
 .speaker-card:hover {
   border-color: #27e6ff;
   box-shadow: 0 14px 35px #27e6ff12, 0 0 22px #ff4fcf10;
 }
+
+/* Aumenta as fotos e aplica uma moldura neon */
 .speaker-avatar {
   width: 176px;
   height: 176px;
@@ -2197,6 +2598,8 @@ body {
   box-shadow: 0 0 0 5px #27e6ff12, 0 0 30px #ff4fcf24;
   font-size: 30px;
 }
+
+/* Faz a foto preencher o espaço sem distorção */
 .speaker-avatar img {
   display: block;
   width: 100%;
@@ -2205,11 +2608,15 @@ body {
   object-position: center top;
   border-radius: 50%;
 }
+
+/* Destaca a categoria do palestrante */
 .speaker-label {
   color: #27e6ff;
   font-size: 11px;
   margin-bottom: 8px;
 }
+
+/* Aumenta e destaca os nomes dos palestrantes */
 .speaker-card h3 {
   color: #fff;
   font-family: 'Manrope', sans-serif;
@@ -2218,6 +2625,8 @@ body {
   letter-spacing: -.6px;
   margin: 4px 0 10px;
 }
+
+/* Destaca a profissão em azul */
 .speaker-role {
   font-size: 15px;
   line-height: 1.6;
@@ -2225,119 +2634,345 @@ body {
   font-weight: 700;
   margin: 0;
 }
+
+/* Usa rosa nas profissões dos cartões seguintes */
 .speaker-card:nth-child(2) .speaker-role,
-.speaker-card:nth-child(3) .speaker-role { color: #ff69d6; }
+.speaker-card:nth-child(3) .speaker-role {
+  color: #ff69d6;
+}
+
+/* Cria uma linha divisória com degradê */
 .speaker-divider {
   width: 100%;
   background: linear-gradient(90deg, transparent, #27e6ff, #ff4fcf, transparent);
   margin: 22px 0;
 }
-.speaker-topic { color: #c4cce0; font-size: 14px; }
-.avatar-lilac, .avatar-blue, .avatar-orange {
+
+.speaker-topic {
+  color: #c4cce0;
+  font-size: 14px;
+}
+
+/* Atualiza as cores de fundo das fotos sem imagem */
+.avatar-lilac,
+.avatar-blue,
+.avatar-orange {
   color: #fff;
   background: linear-gradient(135deg, #27e6ff, #ff4fcf);
 }
 
-/* Chamada para inscrição e rodapé. */
+/* ======================================================
+   CHAMADA PARA INSCRIÇÃO E RODAPÉ
+   ====================================================== */
+
+/* Aplica um degradê escuro ao painel de inscrição */
 .cta-panel {
   background: linear-gradient(120deg, #111a31, #25132f);
   border: 1px solid #293652;
 }
-.cta-panel:after { border-color: #27e6ff65; }
-.cta-panel p { color: #c0c9df; }
+
+.cta-panel:after {
+  border-color: #27e6ff65;
+}
+
+.cta-panel p {
+  color: #c0c9df;
+}
+
+/* Atualiza o ícone decorativo da chamada */
 .cta-decoration {
   background: #13283c;
   border-color: #27e6ff70;
   color: #27e6ff;
 }
+
+/* Aplica o degradê ao botão de inscrição */
 .button-light {
   color: #080b18;
   background: linear-gradient(100deg, #27e6ff, #ff4fcf);
 }
-.button-light:hover { color: #fff; }
+
+.button-light:hover {
+  color: #fff;
+}
+
+/* Escurece o rodapé */
 .site-footer {
   background: #080b18;
   border-color: #26314d;
 }
-.footer-inner > p, .footer-year { color: #a9b4ce; }
 
-/* Formulário: mesmo tema escuro das outras páginas. */
-.form-intro > p, .attendees-heading p { color: #bdc6dc; }
-.back-link { color: #bdc6dc; }
-.back-link:hover { color: #27e6ff; }
-.form-benefits strong, .form-date strong { color: #f4f5ff; }
-.form-benefits small, .form-date small { color: #b4bfd6; }
-.form-date { border-color: #293652; }
-.form-date > span { background: #10384a; color: #27e6ff; }
-.form-benefits > div > span { background: #351b43; color: #ff69d6; }
-.form-card, .attendees-panel, .stat-card {
+.footer-inner > p,
+.footer-year {
+  color: #a9b4ce;
+}
+
+/* ======================================================
+   FORMULÁRIO E LISTA DE INSCRITOS NO TEMA ESCURO
+   ====================================================== */
+
+/* Atualiza as cores dos textos */
+.form-intro > p,
+.attendees-heading p {
+  color: #bdc6dc;
+}
+
+.back-link {
+  color: #bdc6dc;
+}
+
+.back-link:hover {
+  color: #27e6ff;
+}
+
+.form-benefits strong,
+.form-date strong {
+  color: #f4f5ff;
+}
+
+.form-benefits small,
+.form-date small {
+  color: #b4bfd6;
+}
+
+.form-date {
+  border-color: #293652;
+}
+
+.form-date > span {
+  background: #10384a;
+  color: #27e6ff;
+}
+
+.form-benefits > div > span {
+  background: #351b43;
+  color: #ff69d6;
+}
+
+/* Escurece os cartões e painéis */
+.form-card,
+.attendees-panel,
+.stat-card {
   background: #11182b;
   border-color: #293652;
   color: #f4f5ff;
 }
-.form-card-heading h2, .panel-toolbar h2 { color: #fff; }
-.form-card-heading p, .panel-toolbar p { color: #b4bfd6; }
-.form-card form > label, .ticket-fieldset legend { color: #eef2ff; }
-.input-wrap, .ticket-option, .search-box, .icon-button {
+
+.form-card-heading h2,
+.panel-toolbar h2 {
+  color: #fff;
+}
+
+.form-card-heading p,
+.panel-toolbar p {
+  color: #b4bfd6;
+}
+
+.form-card form > label,
+.ticket-fieldset legend {
+  color: #eef2ff;
+}
+
+/* Atualiza os campos de entrada e pesquisa */
+.input-wrap,
+.ticket-option,
+.search-box,
+.icon-button {
   background: #0b1020;
   border-color: #35415e;
   color: #c2cbe0;
 }
-.input-wrap input, .search-box input { color: #fff; }
-.input-wrap input::placeholder, .search-box input::placeholder { color: #8794b2; }
-.input-wrap:focus-within { border-color: #27e6ff; box-shadow: 0 0 0 3px #27e6ff18; }
-.ticket-option.selected { border-color: #ff4fcf; background: #25152d; }
-.ticket-option strong { color: #fff; }
-.ticket-option small { color: #b4bfd6; }
-.ticket-option.selected .ticket-radio { border-color: #ff4fcf; }
-.privacy-note, .admin-note { color: #aab5cf; }
-.stat-icon { background: #10384a; color: #27e6ff; }
-.stat-icon-purple { background: #351b43; color: #ff69d6; }
-.stat-icon-orange { background: #351b43; color: #ff69d6; }
-.stat-card small { color: #b4bfd6; }
-.stat-card strong { color: #fff; }
-.panel-toolbar, .panel-footer { border-color: #293652; }
-.attendees-table th { background: #172039; color: #c2cbe0; }
-.attendees-table td { border-color: #293652; color: #e7ebfa; }
-.person-cell strong { color: #fff; }
-.person-cell small, .contact-cell { color: #b4bfd6; }
-.person-avatar { background: #351b43; color: #ff69d6; }
-.student-badge { background: #351b43; color: #ff83df; }
-.pro-badge { background: #10384a; color: #53eaff; }
-.icon-button:hover { color: #27e6ff; border-color: #27e6ff; }
-.delete-button { background: #281522; border-color: #62304f; color: #ff91d9; }
-.delete-button:hover { background: #40172f; }
-.panel-footer { color: #aab5cf; }
-.empty-icon { background: #10384a; color: #27e6ff; }
-.empty-state h3 { color: #fff; }
-.empty-state p { color: #b4bfd6; }
-.loader { border-color: #26314d; border-top-color: #27e6ff; }
 
-/* Menu aberto no celular. */
+.input-wrap input,
+.search-box input {
+  color: #fff;
+}
+
+.input-wrap input::placeholder,
+.search-box input::placeholder {
+  color: #8794b2;
+}
+
+/* Destaca os campos selecionados */
+.input-wrap:focus-within {
+  border-color: #27e6ff;
+  box-shadow: 0 0 0 3px #27e6ff18;
+}
+
+/* Destaca o ingresso escolhido */
+.ticket-option.selected {
+  border-color: #ff4fcf;
+  background: #25152d;
+}
+
+.ticket-option strong {
+  color: #fff;
+}
+
+.ticket-option small {
+  color: #b4bfd6;
+}
+
+.ticket-option.selected .ticket-radio {
+  border-color: #ff4fcf;
+}
+
+/* Ajusta a cor dos avisos */
+.privacy-note,
+.admin-note {
+  color: #aab5cf;
+}
+
+/* Atualiza as cores dos cartões de estatísticas */
+.stat-icon {
+  background: #10384a;
+  color: #27e6ff;
+}
+
+.stat-icon-purple {
+  background: #351b43;
+  color: #ff69d6;
+}
+
+.stat-icon-orange {
+  background: #351b43;
+  color: #ff69d6;
+}
+
+.stat-card small {
+  color: #b4bfd6;
+}
+
+.stat-card strong {
+  color: #fff;
+}
+
+/* Atualiza as linhas e o cabeçalho da tabela */
+.panel-toolbar,
+.panel-footer {
+  border-color: #293652;
+}
+
+.attendees-table th {
+  background: #172039;
+  color: #c2cbe0;
+}
+
+.attendees-table td {
+  border-color: #293652;
+  color: #e7ebfa;
+}
+
+.person-cell strong {
+  color: #fff;
+}
+
+.person-cell small,
+.contact-cell {
+  color: #b4bfd6;
+}
+
+/* Atualiza os avatares e selos dos inscritos */
+.person-avatar {
+  background: #351b43;
+  color: #ff69d6;
+}
+
+.student-badge {
+  background: #351b43;
+  color: #ff83df;
+}
+
+.pro-badge {
+  background: #10384a;
+  color: #53eaff;
+}
+
+/* Destaca os botões de ação */
+.icon-button:hover {
+  color: #27e6ff;
+  border-color: #27e6ff;
+}
+
+.delete-button {
+  background: #281522;
+  border-color: #62304f;
+  color: #ff91d9;
+}
+
+.delete-button:hover {
+  background: #40172f;
+}
+
+.panel-footer {
+  color: #aab5cf;
+}
+
+/* Atualiza a mensagem de lista vazia */
+.empty-icon {
+  background: #10384a;
+  color: #27e6ff;
+}
+
+.empty-state h3 {
+  color: #fff;
+}
+
+.empty-state p {
+  color: #b4bfd6;
+}
+
+/* Atualiza a cor do indicador de carregamento */
+.loader {
+  border-color: #26314d;
+  border-top-color: #27e6ff;
+}
+
+/* Ajusta o menu e os cartões em telas pequenas */
 @media (max-width: 700px) {
   .nav-links {
     background: #090d1c;
     border-color: #293652;
   }
-  .speaker-card { padding: 24px 18px; }
+
+  .speaker-card {
+    padding: 24px 18px;
+  }
+
   .speaker-avatar {
     width: 150px;
     height: 150px;
     min-width: 150px;
   }
-  .speaker-card h3 { font-size: 25px; }
-  .speaker-role { font-size: 14px; }
-  .section-topline h2 { font-size: 32px; }
+
+  .speaker-card h3 {
+    font-size: 25px;
+  }
+
+  .speaker-role {
+    font-size: 14px;
+  }
+
+  .section-topline h2 {
+    font-size: 32px;
+  }
 }
 
-/* Evita movimentos fortes para quem desativou animações no aparelho. */
+/* Reduz os movimentos para quem prefere menos animações */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
   }
 }
-/* Fotos dos palestrantes */
+
+/* ======================================================
+   AJUSTES EXTRAS PARA AS FOTOS DOS PALESTRANTES
+   ====================================================== */
+
+/* Aumenta as fotos e centraliza cada palestrante */
 .speaker-avatar {
   width: 180px;
   height: 180px;
@@ -2350,7 +2985,7 @@ body {
   background: linear-gradient(135deg, #00d9ff, #ff45c8);
 }
 
-/* Imagem dentro do espaço da foto */
+/* Faz a imagem preencher o espaço */
 .speaker-avatar img {
   width: 100%;
   height: 100%;
@@ -2360,7 +2995,7 @@ body {
   border-radius: 50%;
 }
 
-/* Centraliza o nome e a profissão */
+/* Centraliza o nome, a profissão e o tema */
 .speaker-card h3,
 .speaker-card .speaker-role,
 .speaker-card .speaker-label,
@@ -2368,7 +3003,7 @@ body {
   text-align: center;
 }
 
-/* Deixa o cartão organizado */
+/* Organiza o conteúdo dos cartões */
 .speaker-card {
   display: flex;
   flex-direction: column;
@@ -2376,7 +3011,7 @@ body {
   padding: 28px 22px;
 }
 
-/* Ajuste para celulares */
+/* Reduz as fotos em telas pequenas */
 @media (max-width: 700px) {
   .speaker-avatar {
     width: 155px;
@@ -2384,71 +3019,110 @@ body {
   }
 }
 
-/* Fotos dos palestrantes */
+/* Ajusta o enquadramento das fotos */
 .speaker-avatar img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 
-  /* Move o enquadramento um pouco para cima */
+  /* Posiciona o rosto um pouco mais para cima */
   object-position: center 20%;
 
   border-radius: 50%;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Efeito ao passar o mouse sobre o cartão */
+/* Aumenta levemente a foto ao passar o mouse */
 .speaker-card:hover .speaker-avatar img {
   transform: scale(1.12);
   filter: brightness(1.12) contrast(1.05);
 }
-/* Área da foto do palestrante */
-.speaker-avatar {
-  width: 100%;
-  height: 360px;
+
+/* ======================================================
+   FOTOS DA ERIKA E DO BILL GATES
+   Fotos maiores, centralizadas e com moldura neon
+   ====================================================== */
+
+/* Organiza o conteúdo e o fundo do cartão */
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   overflow: hidden;
-  border-radius: 16px;
-  background: #10172a;
+  background: linear-gradient(145deg, #10172a, #191329);
+  border: 1px solid rgba(39, 230, 255, 0.35);
+  border-radius: 22px;
+  padding: 28px 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Destaca o cartão quando o mouse passa sobre ele */
+.speaker-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff4fcf;
+  box-shadow:
+    0 0 18px rgba(39, 230, 255, 0.25),
+    0 0 28px rgba(255, 79, 207, 0.2);
+}
+
+/* Cria a moldura retangular das fotografias */
+.speaker-avatar {
+  position: relative;
+  width: 250px;
+  height: 280px;
+  max-width: 100%;
+  flex-shrink: 0;
+  margin: 0 auto 22px;
+  padding: 3px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #27e6ff, #ff4fcf);
+  box-shadow:
+    0 0 14px rgba(39, 230, 255, 0.25),
+    0 0 22px rgba(255, 79, 207, 0.18);
+}
+
+/* Faz a foto preencher a moldura e mostra o rosto */
 .speaker-avatar img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center center;
-  transition: transform 0.4s ease, filter 0.4s ease;
-  filter: brightness(1.08) contrast(1.08);
-}
-
-/* Efeito ao passar o mouse */
-.speaker-card:hover .speaker-avatar img {
-  transform: scale(1.05);
-  filter: brightness(1.18) contrast(1.12);
-}
-/* Quadrado da foto do palestrante */
-.speaker-avatar {
-  width: 100%;
-  height: 360px;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #10172a;
-}
-
-/* Foto preenchendo todo o quadrado */
-.speaker-avatar img {
-  width: 100%;
-  height: 100%;
-  display: block;
   object-fit: cover;
   object-position: center 20%;
-  transition: transform 0.4s ease, filter 0.4s ease;
-  filter: brightness(1.08) contrast(1.08);
+  border-radius: 15px;
+  filter: none;
+  image-rendering: auto;
+  transform: translateZ(0);
+  transition: transform 0.35s ease;
 }
 
-/* Efeito ao passar o mouse */
+/* Aplica um zoom suave na fotografia */
 .speaker-card:hover .speaker-avatar img {
   transform: scale(1.05);
-  filter: brightness(1.15) contrast(1.1);
+}
+
+/* Define a cor do nome do palestrante */
+.speaker-card h3 {
+  color: #ffffff;
+}
+
+/* Destaca a profissão em azul fluorescente */
+.speaker-card .speaker-role {
+  color: #27e6ff;
+}
+
+/* Usa rosa neon nas profissões dos cartões seguintes */
+.speaker-card:nth-child(2) .speaker-role,
+.speaker-card:nth-child(3) .speaker-role {
+  color: #ff69d6;
+}
+
+/* Reduz as fotos para caberem nos celulares */
+@media (max-width: 700px) {
+  .speaker-avatar {
+    width: 230px;
+    height: 260px;
+  }
 }
