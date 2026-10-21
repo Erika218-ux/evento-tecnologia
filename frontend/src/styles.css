@@ -1,8 +1,6 @@
 
-/*
-  TECHCONNECT
-  Este arquivo controla a aparência de todas as páginas do site.
-*/
+
+
 
 /* Importa as fontes usadas no projeto */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
@@ -2635,10 +2633,15 @@ body {
   margin: 0;
 }
 
-/* Usa rosa nas profissões dos cartões seguintes */
-.speaker-card:nth-child(2) .speaker-role,
-.speaker-card:nth-child(3) .speaker-role {
-  color: #ff69d6;
+/* Define a cor da profissão de acordo com o gênero do palestrante */
+/* Homens: azul fluorescente */
+.speaker-card.homem .speaker-role {
+  color: #27e6ff !important;
+}
+
+/* Mulheres: rosa neon */
+.speaker-card.mulher .speaker-role {
+  color: #ff69d6 !important;
 }
 
 /* Cria uma linha divisória com degradê */
@@ -3039,10 +3042,7 @@ body {
   filter: brightness(1.12) contrast(1.05);
 }
 
-/* ======================================================
-   FOTOS DA ERIKA E DO BILL GATES
-   Fotos maiores, centralizadas e com moldura neon
-   ====================================================== */
+
 
 /* Organiza o conteúdo e o fundo do cartão */
 .speaker-card {
@@ -3108,27 +3108,17 @@ body {
   color: #ffffff;
 }
 
-/* Destaca a profissão em azul fluorescente */
-.speaker-card .speaker-role {
-  color: #27e6ff;
+/* ======================================================
+   CORES FINAIS DAS PROFISSÕES DOS PALESTRANTES
+   ====================================================== */
+.speaker-card.homem .speaker-role {
+  color: #27e6ff !important;
 }
 
-/* Usa rosa neon nas profissões dos cartões seguintes */
-.speaker-card:nth-child(2) .speaker-role,
-.speaker-card:nth-child(3) .speaker-role {
-  color: #ff69d6;
+.speaker-card.mulher .speaker-role {
+  color: #ff69d6 !important;
 }
-
-/* Reduz as fotos para caberem nos celulares */
-@media (max-width: 700px) {
-  .speaker-avatar {
-    width: 230px;
-    height: 260px;
-  }
-}
-
-/* Melhora a aparência das fotos */
+/* Melhora levemente a nitidez visual das fotos */
 .speaker-avatar img {
-  image-rendering: auto;
-  filter: contrast(1.08) saturate(1.05);
+  filter: contrast(1.08);
 }
