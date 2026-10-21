@@ -3126,3 +3126,9 @@ body {
     height: 260px;
   }
 }
+
+/* Melhora a aparência das fotos */
+.speaker-avatar img {
+  image-rendering: auto;
+  filter: contrast(1.08) saturate(1.05);
+}
